@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         TextView txtName = findViewById(R.id.txt_name);
         TextView txtGPA = findViewById(R.id.txt_gpa);
         txtName.setText("Ho va ten: " +name);
-        txtGPA.setText("GPa: "+gpa);
+        txtGPA.setText("GPA: "+gpa);
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +43,11 @@ public class MainActivity2 extends AppCompatActivity {
             intent.putExtras(bundle);
             setResult(RESULT_OK, intent);
             finish();
+        });
+        ImageButton imgBack = findViewById(R.id.img_btn_back);
+        imgBack.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+            startActivity(intent);
         });
     }
 }
