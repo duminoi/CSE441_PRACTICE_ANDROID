@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn Đề Thi"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <GridLayout
+        android:layout_width="367dp"
+        android:layout_height="378dp"
+        android:columnCount="3"
+        android:padding="8dp"
+        android:rowCount="3">
+
+        <Button
+            android:id="@+id/button_exam_1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 1"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 2"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 3"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 4"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="#673AB7"
+            android:text="Đề 5"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 6"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 7"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_exam_8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:text="Đề 8"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/button_random_exam"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="#673AB7"
+            android:text="Thi Ngẫu Nhiên"
+            android:textColor="#FFFFFF" /> <!-- Đặt độ rộng tối thiểu -->
+
+
+
+        /> <!-- Tùy chọn này giúp nút trải dài qua 3 cột -->
+    </GridLayout>
+</LinearLayout>

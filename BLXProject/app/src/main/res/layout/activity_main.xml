@@ -1,0 +1,19 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/button_a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ôn bằng lái xe máy hạng A1"/>
+
+    <Button
+        android:id="@+id/button_a2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ôn bằng lái xe máy hạng A2" />
+</LinearLayout>
