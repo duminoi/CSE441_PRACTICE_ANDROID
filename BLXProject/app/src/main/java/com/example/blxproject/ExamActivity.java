@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class ExamActivity extends AppCompatActivity {
         Button buttonExam6 = findViewById(R.id.button_exam_6);
         Button buttonExam7 = findViewById(R.id.button_exam_7);
         Button buttonExam8 = findViewById(R.id.button_exam_8);
+        ImageButton btnBack = findViewById(R.id.btn_back);
 
         // Thiết lập sự kiện click cho các nút
         View.OnClickListener examClickListener = new View.OnClickListener() {
@@ -36,6 +38,14 @@ public class ExamActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+
+        // Thiết lập sự kiện click cho nút "Back"
+        btnBack.setOnClickListener(v -> {
+            // Quay trở lại SectionActivity
+            Intent intent = new Intent(ExamActivity.this, SectionActivity.class);
+            startActivity(intent);
+            finish(); // Kết thúc ExamActivity để không quay lại khi nhấn nút Back trên thiết bị
+        });
 
         buttonExam1.setOnClickListener(examClickListener);
         buttonExam2.setOnClickListener(examClickListener);

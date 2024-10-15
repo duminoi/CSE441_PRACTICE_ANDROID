@@ -29,7 +29,12 @@ public class SectionActivity extends AppCompatActivity {
             Intent intent = new Intent(SectionActivity.this, ExamActivity.class);
             startActivity(intent);
         });
-
+        ImageButton buttonReview = findViewById(R.id.button_review_book);
+        buttonReview.setOnClickListener(v -> {
+            // Mở màn hình câu hỏi ôn tập
+            Intent intent = new Intent(SectionActivity.this, ReviewQuestion.class);
+            startActivity(intent);
+        });
         ImageButton buttonWrongQuestions = findViewById(R.id.button_wrong_questions);
         buttonWrongQuestions.setOnClickListener(v -> {
             // Mở màn hình xem câu bị sai

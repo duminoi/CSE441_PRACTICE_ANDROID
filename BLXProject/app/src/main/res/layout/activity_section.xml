@@ -91,6 +91,41 @@
                     android:textStyle="bold" />
             </LinearLayout>
         </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="123dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F44336"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/button_review_book"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="#E86F66"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/open_book" />
+
+                <TextView
+                    android:id="@+id/text_button_review_book"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Câu hỏi ôn tập"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"

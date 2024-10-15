@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import org.json.JSONArray;
+import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("license_type", "A2");
             startActivity(intent);
         });
+
+
     }
 }

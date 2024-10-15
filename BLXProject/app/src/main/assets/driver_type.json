@@ -1,0 +1,49 @@
+{
+    "types": [
+        {
+            "id": 2001,
+            "title": "60 câu hỏi điểm liệt",
+            "quantity": 60
+        },
+        {
+            "id": 2002,
+            "title": "Khái niệm và quy tắc",
+            "quantity": 166
+        },
+        {
+            "id": 2003,
+            "title": "Nghiệp vụ vận tải",
+            "quantity": 26
+        },
+        {
+            "id": 2004,
+            "title": "Văn hóa và đạo đức lái xe",
+            "quantity": 21
+        },
+        {
+            "id": 2005,
+            "title": "Kỹ thuật lái xe",
+            "quantity": 55
+        },
+        {
+            "id": 2006,
+            "title": "Cấu tạo và sửa chữa",
+            "quantity": 35
+        },
+        {
+            "id": 2007,
+            "title": "Biển báo đường bộ",
+            "quantity": 182
+        },
+        {
+            "id": 2008,
+            "title": "Sa hình",
+            "quantity": 144
+        },
+        {
+            "id": 2009,
+            "title": "60 bộ đề thi thử lý thuyết",
+            "quantity": 35
+        }
+    ]
+}
