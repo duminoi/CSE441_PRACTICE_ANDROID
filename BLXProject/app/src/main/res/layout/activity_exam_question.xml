@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/question_text"
+        android:id="@+id/txt_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#35BCF8"
@@ -42,18 +42,35 @@
             android:id="@+id/option4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <RadioButton
             android:id="@+id/option5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/button_next"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#35BCF8"
-        android:textColor="@color/black"
-        android:text="Câu hỏi tiếp theo" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btn_previous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#35BCF8"
+            android:textColor="@color/black"
+            android:text="Câu trước" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#35BCF8"
+            android:textColor="@color/black"
+            android:text="Câu tiếp" />
+    </LinearLayout>
 </LinearLayout>

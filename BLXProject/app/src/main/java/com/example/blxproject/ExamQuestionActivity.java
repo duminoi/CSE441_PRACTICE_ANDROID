@@ -1,6 +1,8 @@
 package com.example.blxproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
@@ -20,13 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExamQuestionActivity extends AppCompatActivity {
-    private TextView questionText;
+    private TextView txtQuestion;
     private RadioGroup radioGroup;
-    private Button buttonNext;
+    private Button btnPrevious;
+    private Button btnNext;
 
     private List<Question> questions;
     private int currentQuestionIndex = 0;
-
     private List<String> userAnswers; // Lưu đáp án đã chọn của người dùng
 
     @Override
@@ -34,9 +37,10 @@ public class ExamQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_question);
 
-        questionText = findViewById(R.id.question_text);
+        txtQuestion = findViewById(R.id.txt_question);
         radioGroup = findViewById(R.id.radio_group);
-        buttonNext = findViewById(R.id.button_next);
+        btnPrevious = findViewById(R.id.btn_previous);
+        btnNext = findViewById(R.id.btn_next);
 
         // Khởi tạo danh sách câu hỏi từ tệp JSON
         questions = loadQuestionsFromJson();
@@ -53,34 +57,63 @@ public class ExamQuestionActivity extends AppCompatActivity {
 
         displayCurrentQuestion();
 
-        buttonNext.setOnClickListener(new View.OnClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                if (selectedId == -1) {
-                    Toast.makeText(ExamQuestionActivity.this, "Vui lòng chọn một câu trả lời!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                RadioButton selectedRadioButton = findViewById(selectedId);
-                String selectedAnswer = selectedRadioButton.getTag().toString();
-                userAnswers.set(currentQuestionIndex, selectedAnswer); // Lưu đáp án đã chọn
-
-                currentQuestionIndex++;
-                if (currentQuestionIndex < questions.size()) {
-                    displayCurrentQuestion();
-                } else {
-                    showResults();
-                }
+                handleNextButtonClick();
             }
         });
+
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handlePreviousButtonClick();
+            }
+        });
+    }
+
+    private void handleNextButtonClick() {
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        if (selectedId == -1) {
+            Toast.makeText(ExamQuestionActivity.this, "Vui lòng chọn một câu trả lời!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        RadioButton selectedRadioButton = findViewById(selectedId);
+        String selectedAnswer = selectedRadioButton.getTag().toString();
+        userAnswers.set(currentQuestionIndex, selectedAnswer); // Lưu đáp án đã chọn
+
+        currentQuestionIndex++;
+
+        // Log giá trị currentQuestionIndex
+        Log.d("ExamQuestionActivity", "currentQuestionIndex: " + currentQuestionIndex);
+
+        // Kiểm tra nếu currentQuestionIndex vượt quá số câu hỏi
+        if (currentQuestionIndex >= questions.size()) {
+            showResults(); // Gọi phương thức để hiện kết quả
+        } else {
+            displayCurrentQuestion();
+        }
+    }
+
+
+
+    private void handlePreviousButtonClick() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayCurrentQuestion();
+        } else {
+            Toast.makeText(this, "Đây là câu hỏi đầu tiên!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private List<Question> loadQuestionsFromJson() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("driver_data.json")));
+            // Đọc JSON từ trường "question"
             Type listType = new TypeToken<List<Question>>() {}.getType();
-            return new Gson().fromJson(reader, listType);
+            JsonObject jsonObject = new Gson().fromJson(reader, JsonObject.class);
+            return new Gson().fromJson(jsonObject.get("question"), listType);
         } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
@@ -89,7 +122,7 @@ public class ExamQuestionActivity extends AppCompatActivity {
 
     private void displayCurrentQuestion() {
         Question currentQuestion = questions.get(currentQuestionIndex);
-        questionText.setText(currentQuestion.getQuestion());
+        txtQuestion.setText(currentQuestion.getQuestion());
 
         // Đặt các đáp án cho RadioButton
         String[] options = {"a", "b", "c", "d", "e"};
@@ -99,7 +132,24 @@ public class ExamQuestionActivity extends AppCompatActivity {
             if (radioButton == null) {
                 continue; // Bỏ qua nếu RadioButton không tồn tại
             }
-            String optionText = currentQuestion.getOption().get(options[i]);
+            String optionText = null;
+            switch (options[i]) {
+                case "a":
+                    optionText = currentQuestion.getOption().getA();
+                    break;
+                case "b":
+                    optionText = currentQuestion.getOption().getB();
+                    break;
+                case "c":
+                    optionText = currentQuestion.getOption().getC();
+                    break;
+                case "d":
+                    optionText = currentQuestion.getOption().getD();
+                    break;
+                case "e":
+                    optionText = currentQuestion.getOption().getE();
+                    break;
+            }
             if (optionText != null) {
                 radioButton.setVisibility(View.VISIBLE);
                 radioButton.setText(optionText);
@@ -111,145 +161,30 @@ public class ExamQuestionActivity extends AppCompatActivity {
     }
 
     private void showResults() {
-        StringBuilder result = new StringBuilder();
         int correctAnswers = 0;
 
+        // Tính số câu đúng
         for (int i = 0; i < questions.size(); i++) {
             Question question = questions.get(i);
-            String correctAnswer = question.getAnswer();
-            String userAnswer = userAnswers.get(i);
+            String correctAnswer = question.getAnswer(); // Đáp án đúng
+            String userAnswer = userAnswers.get(i); // Đáp án của người dùng
 
             if (userAnswer.equals(correctAnswer)) {
                 correctAnswers++;
-                result.append("Câu hỏi ").append(i + 1).append(": Đúng!\n");
-            } else {
-                result.append("Câu hỏi ").append(i + 1).append(": Sai! Đáp án đúng là: ")
-                        .append(question.getOption().get(correctAnswer)).append("\n");
             }
         }
 
-        result.append("\nTổng số câu đúng: ").append(correctAnswers).append("/").append(questions.size());
-        Toast.makeText(this, result.toString(), Toast.LENGTH_LONG).show();
+        // Chuyển đến ResultActivity
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("correctAnswers", correctAnswers);
+        intent.putExtra("totalQuestions", questions.size());
+        intent.putExtra("userAnswers", userAnswers.toArray(new String[0])); // Chuyển đổi danh sách thành mảng
+        intent.putExtra("questions", questions.toArray(new Question[0])); // Chuyển đổi danh sách thành mảng
+
+        startActivity(intent);
+        finish(); // Đóng Activity hiện tại
     }
+
+
+
 }
-
-
-//package com.example.blxproject;
-//
-//import android.os.Bundle;
-//import android.view.View;
-//import android.widget.Button;
-//import android.widget.RadioButton;
-//import android.widget.RadioGroup;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class ExamQuestionActivity extends AppCompatActivity {
-//    private TextView questionText;
-//    private RadioGroup radioGroup;
-//    private Button buttonNext;
-//
-//    private List<Question> questions;
-//    private int currentQuestionIndex = 0;
-//
-//    // Danh sách để lưu trữ câu trả lời của người dùng
-//    private List<Integer> userAnswers; // Lưu đáp án đã chọn của người dùng
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_exam_question);
-//
-//        questionText = findViewById(R.id.question_text);
-//        radioGroup = findViewById(R.id.radio_group);
-//        buttonNext = findViewById(R.id.button_next);
-//
-//        // Khởi tạo danh sách câu hỏi
-//        initializeQuestions();
-//        userAnswers = new ArrayList<>(questions.size()); // Khởi tạo danh sách lưu đáp án
-//
-//        displayCurrentQuestion();
-//
-//        buttonNext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Kiểm tra xem có câu trả lời nào được chọn không
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//                if (selectedId == -1) {
-//                    // Nếu không có câu trả lời nào được chọn, hiển thị thông báo
-//                    Toast.makeText(ExamQuestionActivity.this, "Vui lòng chọn một câu trả lời!", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//
-//                // Lưu đáp án đã chọn của người dùng
-//                RadioButton selectedRadioButton = findViewById(selectedId);
-//                int selectedAnswerIndex = radioGroup.indexOfChild(selectedRadioButton);
-//                userAnswers.add(selectedAnswerIndex); // Lưu đáp án đã chọn
-//
-//                // Chuyển đến câu hỏi tiếp theo
-//                currentQuestionIndex++;
-//                if (currentQuestionIndex < questions.size()) {
-//                    displayCurrentQuestion();
-//                } else {
-//                    // Hiển thị tổng hợp kết quả
-//                    showResults();
-//                }
-//            }
-//        });
-//    }
-//
-//    private void initializeQuestions() {
-//        questions = new ArrayList<>();
-//        questions.add(new Question("Câu hỏi 1: Đây là câu hỏi gì?",
-//                new String[]{"Đáp án 1", "Đáp án 2", "Đáp án 3", "Đáp án 4"}, 0));
-//        questions.add(new Question("Câu hỏi 2: Câu hỏi này là gì?",
-//                new String[]{"Đáp án A", "Đáp án B", "Đáp án C", "Đáp án D"}, 1));
-//        questions.add(new Question("Câu hỏi 3: Câu hỏi tiếp theo là gì?",
-//                new String[]{"Đáp án X", "Đáp án Y", "Đáp án Z", "Đáp án W"}, 2));
-//        // Thêm nhiều câu hỏi hơn nếu cần
-//    }
-//
-//    private void displayCurrentQuestion() {
-//        Question currentQuestion = questions.get(currentQuestionIndex);
-//        questionText.setText(currentQuestion.getQuestion());
-//
-//        // Đặt các đáp án cho RadioButton
-//        ((RadioButton) findViewById(R.id.option1)).setText(currentQuestion.getOptions()[0]);
-//        ((RadioButton) findViewById(R.id.option2)).setText(currentQuestion.getOptions()[1]);
-//        ((RadioButton) findViewById(R.id.option3)).setText(currentQuestion.getOptions()[2]);
-//        ((RadioButton) findViewById(R.id.option4)).setText(currentQuestion.getOptions()[3]);
-//
-//        // Đặt lại RadioGroup
-//        radioGroup.clearCheck();
-//    }
-//
-//    private void showResults() {
-//        StringBuilder result = new StringBuilder();
-//        int correctAnswers = 0;
-//
-//        for (int i = 0; i < questions.size(); i++) {
-//            Question question = questions.get(i);
-//            int correctAnswerIndex = question.getAnswerIndex();
-//            int userAnswerIndex = userAnswers.get(i);
-//
-//            if (userAnswerIndex == correctAnswerIndex) {
-//                correctAnswers++;
-//                result.append("Câu hỏi ").append(i + 1).append(": Đúng!\n");
-//            } else {
-//                result.append("Câu hỏi ").append(i + 1).append(": Sai! Đáp án đúng là: ")
-//                        .append(question.getOptions()[correctAnswerIndex]).append("\n");
-//            }
-//        }
-//
-//        result.append("\nTổng số câu đúng: ").append(correctAnswers).append("/")
-//                .append(questions.size());
-//
-//        // Hiển thị kết quả
-//        Toast.makeText(this, result.toString(), Toast.LENGTH_LONG).show();
-//    }
-//}

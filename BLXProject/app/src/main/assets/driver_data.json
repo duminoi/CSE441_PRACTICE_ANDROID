@@ -56,6 +56,62 @@
       },
       "answer": "a",
       "suggest": "Giới hạn về chiều cao, chiều rộng"
+    },
+    {
+      "id": "10004",
+      "question": "Khái niệm “Khổ giới hạn đường bộ” được hiểu như thế nào là đúng?",
+      "option": {
+        "a": "Là khoảng trống có kích thước giới hạn về chiều cao, chiều rộng của đường, cầu, bến phà, hầm đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "b": "Là khoảng trống có kích thước giới hạn về chiều rộng của đường, cầu, bến phà, hầm trên đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "c": "Là khoảng trống có kích thước giới hạn về chiều cao của cầu, bến phà, hầm trên đường bộ để các xe đi qua được an toàn",
+        "d": null,
+        "e": null
+      },
+      "image": {
+        "img1": null,
+        "img2": null,
+        "img3": null,
+        "img4": null
+      },
+      "answer": "a",
+      "suggest": "Giới hạn về chiều cao, chiều rộng"
+    },  {
+      "id": "10005",
+      "question": "Khái niệm “Khổ giới hạn đường bộ” được hiểu như thế nào là đúng?",
+      "option": {
+        "a": "Là khoảng trống có kích thước giới hạn về chiều cao, chiều rộng của đường, cầu, bến phà, hầm đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "b": "Là khoảng trống có kích thước giới hạn về chiều rộng của đường, cầu, bến phà, hầm trên đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "c": "Là khoảng trống có kích thước giới hạn về chiều cao của cầu, bến phà, hầm trên đường bộ để các xe đi qua được an toàn",
+        "d": null,
+        "e": null
+      },
+      "image": {
+        "img1": null,
+        "img2": null,
+        "img3": null,
+        "img4": null
+      },
+      "answer": "a",
+      "suggest": "Giới hạn về chiều cao, chiều rộng"
+    },
+    {
+      "id": "10006",
+      "question": "Khái niệm “Khổ giới hạn đường bộ” được hiểu như thế nào là đúng?",
+      "option": {
+        "a": "Là khoảng trống có kích thước giới hạn về chiều cao, chiều rộng của đường, cầu, bến phà, hầm đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "b": "Là khoảng trống có kích thước giới hạn về chiều rộng của đường, cầu, bến phà, hầm trên đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn",
+        "c": "Là khoảng trống có kích thước giới hạn về chiều cao của cầu, bến phà, hầm trên đường bộ để các xe đi qua được an toàn",
+        "d": null,
+        "e": null
+      },
+      "image": {
+        "img1": null,
+        "img2": null,
+        "img3": null,
+        "img4": null
+      },
+      "answer": "a",
+      "suggest": "Giới hạn về chiều cao, chiều rộng"
     }
   ]
 }
