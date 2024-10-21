@@ -1,6 +1,7 @@
 package com.example.gplxb2;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,16 +33,30 @@ public class BienBaoAdapter extends RecyclerView.Adapter<BienBaoAdapter.BienBaoV
     @Override
     public void onBindViewHolder(@NonNull BienBaoViewHolder holder, int position) {
         BienBao bienBao = bienBaoList.get(position);
-        holder.nameTextView.setText(bienBao.getName());
-        holder.descriptionTextView.setText(bienBao.getDes());
 
-        // Sử dụng Glide để tải hình ảnh từ URL
-        Glide.with(context)
-                .load(bienBao.getImagePath()) // imagePath có thể là URL hoặc tên tệp hình ảnh
-                .placeholder(R.drawable.bienbao) // Hình ảnh mặc định khi đang tải
-                .error(R.drawable.bienbao) // Hình ảnh khi có lỗi tải
-                .into(holder.imageView);
+        // Kiểm tra xem đây có phải là tiêu đề không
+        if (bienBao.getDes().isEmpty()) {
+            // Đây là tiêu đề
+            holder.nameTextView.setText(bienBao.getName());
+            holder.nameTextView.setTypeface(null, Typeface.BOLD); // Đặt chữ in đậm
+            holder.descriptionTextView.setVisibility(View.GONE); // Ẩn mô tả
+            holder.imageView.setVisibility(View.GONE); // Ẩn hình ảnh
+        } else {
+            // Đây là một mục bình thường
+            holder.nameTextView.setText(bienBao.getName());
+            holder.descriptionTextView.setText(bienBao.getDes());
+            holder.descriptionTextView.setVisibility(View.VISIBLE); // Hiện mô tả
+            holder.imageView.setVisibility(View.VISIBLE); // Hiện hình ảnh
+
+            // Sử dụng Glide để tải hình ảnh từ URL
+            Glide.with(context)
+                    .load(bienBao.getImagePath())
+                    .placeholder(R.drawable.bienbao) // Hình ảnh mặc định khi đang tải
+                    .error(R.drawable.bienbao) // Hình ảnh khi có lỗi tải
+                    .into(holder.imageView);
+        }
     }
+
 
     @Override
     public int getItemCount() {

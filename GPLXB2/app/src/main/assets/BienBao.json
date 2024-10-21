@@ -1,5 +1,5 @@
 {
-  "BienBaoNguyHiem": [
+  "Biển báo nguy hiểm": [
     {
       "name": "Biển báo W.201a: Chỗ ngoặt nguy hiểm vòng bên trái",
       "des": "Báo trước sắp tới chỗ ngoặt vòng bên trái."
@@ -337,7 +337,7 @@
       "des": "Để cảnh báo có các loại xe ôtô, máy kéo, rơ-moóc hoặc sơ-mi rơ-moóc được kéo bởi xe ôtô hoặc ôtô đầu kéo, xe máy chuyên dùng đang đỗ chiếm một phần đường xe chạy."
     }
   ],
-  "BienBaoCam": [
+  "Biển báo cấm": [
     {
       "name": "Biển báo P.101: Đường cấm",
       "des": "Đường cấm tất cả các loại phương tiện cơ giới và thô sơ lưu thông, trừ các xe được ưu tiên theo luật định.",
