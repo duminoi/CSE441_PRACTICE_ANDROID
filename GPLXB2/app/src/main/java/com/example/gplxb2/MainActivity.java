@@ -79,5 +79,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //btn btnbienbao
+        ImageButton btnBienBao = findViewById(R.id.btnbienbao);
+        btnBienBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BienBaoActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
