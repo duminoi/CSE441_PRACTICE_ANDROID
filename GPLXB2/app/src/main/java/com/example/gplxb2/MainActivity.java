@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         btnBienBao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BienBaoActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,312 +13,373 @@
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/102.gif"
     },
     {
-
+      "id": 3,
       "name": "Biển báo P.103a: Cấm xe ô tô",
       "des": "Đường cấm tất cả các loại xe cơ giới kể cả xe máy 3 bánh có thùng đi qua, trừ xe máy hai bánh, xe gắn máy và các xe được ưu tiên theo luật định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/103a.gif"
     },
     {
+      "id": 4,
       "name": "Biển báo P.103b: Cấm xe ô tô rẽ phải",
       "des": "Đường cấm tất cả các loại xe cơ giới kể cả xe máy 3 bánh có thùng đi qua, trừ xe máy hai bánh, xe gắn máy và các xe được ưu tiên theo luật định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.103b.jpg"
     },
     {
+      "id": 5,
       "name": "Biển báo P.103c: Cấm xe ô tô rẽ trái",
       "des": "Đường cấm tất cả các loại xe cơ giới kể cả xe máy 3 bánh có thùng đi qua, trừ xe máy hai bánh, xe gắn máy và các xe được ưu tiên theo luật định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.103c.jpg"
     },
     {
+      "id": 6,
       "name": "Biển báo P.104: Cấm xe máy",
       "des": "Để báo đường cấm các loại xe máy, trừ các xe được ưu tiên theo quy định, đặt biển số P.104 “Cấm xe máy”. Biển không có giá trị cấm những người dắt xe máy.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.104-200x204.jpg"
     },
     {
+      "id": 7,
       "name": "Biển báo P.105: Cấm xe ô tô và xe máy",
       "des": "Để báo đường cấm các loại xe cơ giới và xe máy đi qua trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.105.jpg"
     },
     {
+      "id": 8,
       "name": "Biển báo P.106a: Cấm xe ô tô tải",
       "des": "Để báo đường cấm các loại xe ô tô tải trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.106a-600x591.jpg"
     },
     {
+      "id": 9,
       "name": "Biển báo P.106b: Cấm xe ô tô tải",
       "des": "Để báo đường cấm các loại xe ô tô tải có khối lượng chuyên chở (theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn một giá trị nhất định. Biển có hiệu lực cấm các xe ô tô tải có khối lượng chuyên chở (xác định theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn giá trị chữ số ghi trong biển (chữ số tấn ghi bằng màu trắng trên hình vẽ xe). Biển có hiệu lực cấm đối với cả máy kéo và các xe máy chuyên dùng đi vào đoạn đường đặt biển.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/106b.jpg"
     },
     {
+      "id": 10,
       "name": "Biển báo P.106C: Cấm các xe chở hàng nguy hiểm",
       "des": "Để báo đường cấm các xe chở hàng nguy hiểm.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.106c.jpg"
     },
     {
+      "id": 11,
       "name": "Biển báo P.107: Cấm ô tô khách và ô tô tải",
       "des": "Để báo đường cấm xe ô tô chở khách và các loại xe ô tô tải kể cả các loại máy kéo và xe máy chuyên dùng đi qua trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.107.jpg"
     },
     {
+      "id": 12,
       "name": "Biển báo P.107a: Cấm xe ô tô khách",
       "des": "Để báo đường cấm ô tô chở khách đi qua trừ các xe ưu tiên theo quy định. Biển này không cấm xe buýt.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.107a-1.jpg"
     },
     {
+      "id": 13,
       "name": "Biển báo P.107b: Cấm xe ô tô taxi",
       "des": "Để báo đường cấm xe ô tô taxi đi lại. Trường hợp cấm xe ô tô taxi theo giờ thì đặt biển phụ ghi giờ cấm.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.107b.jpg"
     },
     {
+      "id": 14,
       "name": "Biển báo P.108: Cấm xe kéo rơ-moóc",
       "des": "Để báo đường cấm các loại xe cơ giới kéo theo rơ-moóc kể cả xe máy, máy kéo, ô tô khách kéo theo rơ-moóc đi lại, trừ loại ô tô sơ-mi-rơ-moóc và các xe được ưu tiên (có kéo theo rơ-moóc) theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.108.jpg"
     },
     {
+      "id": 15,
       "name": "Biển báo P.108a: Cấm xe kéo rơ-moóc",
       "des": "Để báo đường cấm các loại xe sơ-mi rơ-moóc và các xe kéo rơ-moóc trừ các xe được ưu tiên (có dạng xe sơ-mi rơ-moóc hoặc có kéo theo rơ-moóc) theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.108a-scaled.jpg"
     },
     {
+      "id": 16,
       "name": "Biển báo P.109: Cấm máy kéo",
       "des": "Để báo đường cấm các loại máy kéo, kể cả máy kéo bánh hơi và bánh xích đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.109.jpg"
     },
     {
+      "id": 17,
       "name": "Biển báo P.110a: Cấm xe đạp",
       "des": "Để báo đường cấm xe đạp đi qua. Biển không có giá trị cấm những người dắt xe đạp.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.110a.jpg"
     },
     {
+      "id": 18,
       "name": "Biển báo P.110b: Cấm xe đạp thồ",
       "des": "Để báo đường cấm xe đạp thồ đi qua. Biển này không cấm người dắt loại xe này.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.110b.jpg"
     },
     {
+      "id": 19,
       "name": "Biển báo P.111a: Cấm xe gắn máy",
       "des": "Để báo đường cấm xe gắn máy đi qua. Biển không có giá trị đối với xe đạp.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.111a.jpg"
     },
     {
+      "id": 20,
       "name": "Biển báo P.111b: Cấm xe ba bánh loại có động cơ",
       "des": "Để báo đường cấm xe ba bánh loại có động cơ như xe lam, xe xích lô máy, xe lôi máy, v.v…",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.111b.jpg"
     },
     {
+      "id": 21,
       "name": "Biển báo P.111c: Cấm xe ba bánh loại có động cơ",
       "des": "Báo hiệu đường cấm xe ba bánh loại có động cơ như xe lam, xích lô máy, xe lôi máy v.v…",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.111c.jpg"
     },
     {
+      "id": 22,
       "name": "Biển báo P.111d: Cấm xe ba bánh loại không có động cơ",
       "des": "Báo hiệu đường cấm xe ba bánh loại không có động cơ như xích lô, xe lôi, xe đạp v.v…",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.111d.jpg"
     },
     {
+      "id": 23,
       "name": "Biển báo P.112: Cấm người đi bộ",
       "des": "Để báo hiệu đường cấm đi bộ qua lại.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.112.jpg"
     },
     {
+      "id": 24,
       "name": "Biển báo P.113: Cấm xe người kéo, đẩy",
       "des": "Để báo đường cấm xe người kéo, đẩy đi qua. Biển không có giá trị cấm những xe nôi của trẻ em và phương tiện chuyên dùng để đi lại của người tàn tật.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.113.jpg"
     },
     {
+      "id": 25,
       "name": "Biển báo P.114: Cấm xe xúc vật kéo",
       "des": "Để báo đường cấm súc vật vận tải hàng hóa hoặc hành khách dù kéo xe hay chở trên lưng đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.114.jpg"
     },
     {
+      "id": 26,
       "name": "Biển báo P.115: Hạn chế trọng tải toàn bộ xe",
       "des": "Để báo đường cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có trọng tải toàn bộ xe (trọng tải bản thân xe cộng với khối lượng người, hành lý và hàng hóa xếp trên xe) vượt quá trị số ghi trên biển đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.115.jpg"
     },
     {
+      "id": 27,
       "name": "Biển báo P.116: Hạn chế tải trọng trên trục xe",
       "des": "Để báo đường cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có trọng tải toàn bộ xe (cả xe và hàng) phân bổ trên một trục bất kỳ của xe (tải trọng trục xe) vượt quá trị số ghi trên biển đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.116.jpg"
     },
     {
+      "id": 28,
       "name": "Biển báo P.117: Hạn chế chiều cao",
       "des": "Để báo hạn chế chiều cao của xe. Cấm các xe (cơ giới và thô sơ) có chiều cao vượt quá trị số ghi trên biển đi qua, kể cả các xe được ưu tiên theo quy định (chiều cao tính từ mặt đường, mặt cầu đến điểm cao nhất của xe hoặc hàng).",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.117.jpg"
     },
     {
+      "id": 29,
       "name": "Biển báo P.118: Hạn chế chiều ngang xe",
       "des": "Cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định có chiều ngang (kể cả xe và hàng hóa) vượt quá trị số ghi trên biển đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.118.jpg"
     },
     {
+      "id": 30,
       "name": "Biển báo P.119: Hạn chế chiều dài xe",
       "des": "Cấm các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định, có độ dài toàn bộ kể cả xe và hàng lớn hơn trị số ghi trên biển đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.119.jpg"
     },
     {
+      "id": 31,
       "name": "Biển báo P.120: Hạn chế chiều dài xe cơ giới kéo theo rơ-moóc hoặc sơ-mi rơ-moóc",
       "des": "Cấm các loại xe cơ giới kéo theo moóc kể cả ô tô sơ-mi-rơ-moóc và các loại xe được ưu tiên kéo moóc theo luật nhà nước quy định, có độ dài toàn bộ kể cả xe, moóc và hàng lớn hơn trị số ghi trên biển đi qua.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.120.jpg"
     },
     {
+      "id": 32,
       "name": "Biển báo P.121: Cự ly tối thiểu giữa hai xe",
       "des": "Để báo xe ôtô phải đi cách nhau một khoảng tối thiểu. Số ghi trên biển cho biết khoảng cách tối thiểu tính bằng mét. Biển có hiệu lực cấm các xe ôtô không được đi cách nhau kể cả các xe được ưu tiên theo luật lệ nhà nước quy định một cự ly nhỏ hơn trị số ghi trên biển báo.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.121.jpg"
     },
     {
+      "id": 33,
       "name": "Biển báo 123a: Cấm rẽ trái",
       "des": "Để báo cấm rẽ trái (theo hướng mũi tên chỉ) ở những vị trí đường giao nhau. Biển không có giá trị cấm quay đầu xe. Biển có hiệu lực cấm các loại xe (cơ giới và thô sơ) rẽ sang phía trái trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.123a.jpg"
     },
     {
+      "id": 34,
       "name": "Biển báo 123b: Cấm rẽ phải",
       "des": "Để báo cấm rẽ phải (theo hướng mũi tên chỉ) ở những vị trí đường giao nhau. Biển không có giá trị cấm quay đầu xe. Biển có hiệu lực cấm các loại xe (cơ giới và thô sơ) rẽ sang phía phải trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.123b.jpg"
     },
     {
+      "id": 35,
       "name": "Biển báo P.124a: Cấm quay đầu xe",
       "des": "Để báo cấm các loại xe quay đầu (theo kiểu chữ U).",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124a.jpg"
     },
     {
+      "id": 36,
       "name": "Biển báo P.124b: Cấm ô tô quay đầu xe",
       "des": "Để báo cấm xe ô tô quay đầu (theo kiểu chữ U), có hiệu lực cấm xe ô tô và xe máy 3 bánh (side car) quay đầu (theo kiểu chữ U) trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124b.jpg"
     },
     {
+      "id": 37,
       "name": "Biển báo P.124c: Cấm rẽ trái và quay đầu xe",
       "des": "Để báo cấm các loại xe rẽ trái đồng thời cấm quay đầu.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124c-1.jpg"
     },
     {
+      "id": 38,
       "name": "Biển báo P.124d: Cấm rẽ phải và quay đầu xe",
       "des": "Để báo cấm các loại xe rẽ phải đồng thời cấm quay đầu.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124d.jpg"
     },
     {
+      "id": 39,
       "name": "Biển báo P.124e: Cấm ô tô rẽ trái và quay đầu xe",
       "des": "Để báo cấm xe ô tô rẽ trái và đồng thời cấm quay đầu.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124e.jpg"
     },
     {
+      "id": 40,
       "name": "Biển báo P.124f: Cấm ô tô rẽ phải và quay đầu xe",
       "des": "Để báo cấm xe ô tô rẽ phải và đồng thời cấm quay đầu.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.124f.jpg"
     },
     {
+      "id": 41,
       "name": "Biển báo P.125: Cấm vượt",
       "des": "Để báo cấm các loại xe cơ giới vượt nhau. Biển có hiệu lực cấm tất cả các loại xe cơ giới vượt nhau (kể cả xe được ưu tiên theo quy định) nhưng được phép vượt xe máy 2 bánh, xe gắn máy.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.125-scaled.jpg"
     },
     {
+      "id": 42,
       "name": "Biển báo P.126: Cấm xe ô tô tải vượt",
       "des": "Để báo cấm các loại ô tô tải vượt xe cơ giới khác. Biển có hiệu lực cấm các loại ôtô tải có khối lượng chuyên chở (theo Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường phương tiện giao thông cơ giới đường bộ) lớn hơn 3.500 kg kể cả các xe được ưu tiên theo quy định vượt xe cơ giới khác. Được phép vượt xe máy 2 bánh, xe gắn máy. Biển không có giá trị cấm các loại xe cơ giới khác vượt nhau và vượt ô tô tải.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.126.jpg"
     },
     {
+      "id": 43,
       "name": "Biển báo P.127: Tốc độ tối đa cho phép",
       "des": "Để báo tốc độ tối đa cho phép các xe cơ giới chạy. Biển có hiệu lực cấm các loại xe cơ giới chạy với tốc độ tối đa vượt quá trị số ghi trên biển trừ các xe được ưu tiên theo quy định. Người điều khiển phương tiện căn cứ vào điều kiện cụ thể khác như khí hậu thời tiết tình trạng mặt đường, tình hình giao thông, phương tiện, điều kiện sức khỏe để điều khiển phương tiện với tốc độ phù hợp, an toàn và không quá giá trị ghi trên biển.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.127.jpg"
     },
     {
+      "id": 44,
       "name": "Biển báo P.127a: Tốc độ tối đa cho phép về ban đêm",
       "des": "Khi cần quy định tốc độ tối đa về ban đêm cho các phương tiện. Áp dụng biển số P.127a cho một số trường hợp qua khu đông dân cư vào ban đêm nhằm mục đích nâng cao tốc độ vận hành khi đường ít xe chạy. Biển chỉ có hiệu lực trong thời gian ghi trên biển và trong phạm vi từ vị trí đặt biển đến vị trí biển số R.421 “Hết đoạn đường qua khu đông dân cư”. Biển được đặt sau vị trí biển số R.420 “Đoạn đường qua khu đông dân cư”.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.127a.jpg"
     },
     {
+      "id": 45,
       "name": "Biển báo P.127b: Biển ghép tốc độ tối đa cho phép trên từng làn đường",
       "des": "Khi quy định tốc độ tối đa cho phép trên từng làn đường, nếu chỉ sử dụng biển đặt bên đường hoặc trên cột cần vươn hay giá long môn.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.127b.jpg"
     },
     {
+      "id": 46,
       "name": "Biển báo P.127c: Biển ghép tốc độ tối đa cho phép theo phương tiện, trên từng làn đường",
       "des": "",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.127c.jpg"
     },
     {
+      "id": 47,
       "name": "Biển báo DP.127a: Biển hết tốc độ tối đa cho phép theo biển ghép",
       "des": "",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.127a.jpg"
     },
     {
+      "id": 48,
       "name": "Biển báo DP.127b: Biển hết tốc độ tối đa cho phép theo biển ghép",
       "des": "",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.127b.jpg"
     },
     {
+      "id": 49,
       "name": "Biển báo DP.127c: Biển hết tốc độ tối đa cho phép theo biển ghép",
       "des": "Khi quy định tốc độ tối đa cho phép theo phương tiện trên từng làn đường. Các loại phương tiện phải đi đúng làn đường và tuân thủ tốc độ tối đa cho phép trên làn đường đó.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.127c.jpg"
     },
     {
+      "id": 50,
       "name": "Biển báo P.128: Cấm sử dụng còi",
       "des": "Cấm các loại xe sử dụng còi.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.128.jpg"
     },
     {
+      "id": 51,
       "name": "Biển báo P.129: Kiểm tra",
       "des": "Để báo nơi đặt trạm kiểm tra; các loại phương tiện vận tải qua đó phải dừng lại để làm thủ tục kiểm tra, kiểm soát theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.129.jpg"
     },
     {
+      "id": 52,
       "name": "Biển báo P.130: Cấm dừng xe và đỗ xe",
       "des": "Để báo nơi cấm dừng xe và đỗ xe. Biển có hiệu lực cấm các loại xe cơ giới dừng và đỗ ở phía đường có đặt biển trừ các xe được ưu tiên theo quy định. Đối với các loại xe ô tô buýt chạy theo hành trình quy định được hướng dẫn vị trí dừng thích hợp.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.130.jpg"
     },
     {
+      "id": 53,
       "name": "Biển báo P.131a: Cấm đỗ xe",
       "des": "Để báo nơi cấm đỗ xe trừ các xe được ưu tiên theo quy định.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.131a.jpg"
     },
     {
+      "id": 54,
       "name": "Biển báo P.131b: Cấm đỗ xe ngày lẻ",
       "des": "Cấm các loại xe cơ giới đỗ ở phía đường có đặt biển vào những ngày lẻ.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.131b.jpg"
     },
     {
+      "id": 55,
       "name": "Biển báo P.131c: Cấm đỗ xe ngày chẵn",
       "des": "Cấm các loại xe cơ giới đỗ ở phía đường có đặt biển vào những ngày chẵn.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.131c.jpg"
     },
     {
+      "id": 56,
       "name": "Biển báo P.132: Nhường đường cho xe cơ giới đi ngược chiều qua đường hẹp",
       "des": "Để báo các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo quy định khi thấy biển số P.132 phải nhường đường cho các loại xe cơ giới đang đi theo hướng ngược lại qua các đoạn đường hẹp hoặc cầu hẹp.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.132.png"
     },
     {
+      "id": 57,
       "name": "Biển báo DP.133: Hết cấm vượt",
       "des": "Để báo hết đoạn đường cấm vượt.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.133.jpg"
     },
     {
+      "id": 58,
       "name": "Biển báo DP.134: Hết tốc độ tối đa cho phép",
       "des": "Biển báo hết đoạn đường hạn chế tốc độ tối đa. Kể từ biển này, các xe được phép chạy với tốc độ tối đa đã quy định trong luật giao thông đường bộ.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.134.jpg"
     },
     {
+      "id": 59,
       "name": "Biển báo DP.135: Hết tất cả các lệnh cấm",
       "des": "Đến hết đoạn đường mà nhiều biển báo cấm cùng hết hiệu lực.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/DP.135.jpg"
     },
     {
+      "id": 60,
       "name": "Biển báo P.136: Cấm đi thẳng",
       "des": "Đường ở phía trước cấm tất cả các loại xe (trừ xe ưu tiên theo qui định) đi thẳng.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.136.jpg"
     },
     {
+      "id": 61,
       "name": "Biển báo P.137: Cấm rẽ trái, rẽ phải",
       "des": "Các ngả đường phía trước cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) rẽ trái hay rẽ phải.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.137.jpg"
     },
     {
+      "id": 62,
       "name": "Biển báo P.138: Cấm đi thẳng, rẽ trái",
       "des": "Biểu thị đường qua nút giao cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) đi thẳng, rẽ trái.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.138.jpg"
     },
     {
+      "id": 63,
       "name": "Biển báo P.139: Cấm đi thẳng, rẽ phải",
       "des": "Biểu thị đường qua nút giao cấm tất cả các loại xe (trừ xe ưu tiên theo quy định) đi thẳng, rẽ phải.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.139.jpg"
     },
     {
+      "id": 64,
       "name": "Biển báo P.140: Cấm xe công nông và các loại xe tương tự",
       "des": "Để báo đường cấm xe công nông.",
       "image": "https://trungtamthanhcong.net/wp-content/uploads/2015/05/p.140.jpg"

@@ -15,24 +15,25 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BienBaoActivity extends AppCompatActivity {
+public class SignActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private BienBaoAdapter adapter;
-    private List<BienBao> bienBaoList;
+    private SignAdapter adapter;
+    private List<Sign> signList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bien_bao);
+        setContentView(R.layout.activity_sign);
 
         recyclerView = findViewById(R.id.recyclerView);
-        bienBaoList = new ArrayList<>();
+        signList = new ArrayList<>();
 
-        loadBienBaoData();
+        loadSignData();
 
-        adapter = new BienBaoAdapter(this, bienBaoList);
+        adapter = new SignAdapter(this, signList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
         // Thiết lập sự kiện cho nút "Quay lại"
         Button backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +44,7 @@ public class BienBaoActivity extends AppCompatActivity {
         });
     }
 
-    private void loadBienBaoData() {
+    private void loadSignData() {
         try {
             InputStream is = getAssets().open("BienBao.json");
             byte[] buffer = new byte[is.available()];
@@ -57,25 +58,25 @@ public class BienBaoActivity extends AppCompatActivity {
             if (names != null) {
                 for (int i = 0; i < names.length(); i++) {
                     String key = names.getString(i); // Lấy khóa
-                    JSONArray bienBaoArray = jsonObject.getJSONArray(key);
+                    JSONArray signArray = jsonObject.getJSONArray(key);
 
                     // Thêm một tiêu đề cho mỗi mảng
-                    bienBaoList.add(new BienBao(key, "", "")); // Sử dụng tên mảng làm tiêu đề
+                    signList.add(new Sign(key, "", "", i)); // Sử dụng tên mảng làm tiêu đề và truyền chỉ số
 
-                    for (int j = 0; j < bienBaoArray.length(); j++) {
-                        JSONObject bienBaoObject = bienBaoArray.getJSONObject(j);
-                        String name = bienBaoObject.getString("name");
-                        String des = bienBaoObject.getString("des");
+                    for (int j = 0; j < signArray.length(); j++) {
+                        JSONObject signObject = signArray.getJSONObject(j);
+                        String name = signObject.getString("name");
+                        String des = signObject.optString("des", "");
 
                         String imagePath;
-                        if (bienBaoObject.has("image") && !bienBaoObject.isNull("image")) {
-                            imagePath = bienBaoObject.getString("image");
+                        if (signObject.has("image") && !signObject.isNull("image")) {
+                            imagePath = signObject.getString("image");
                         } else {
                             imagePath = "bienbao.png"; // Hình ảnh mặc định
                         }
 
-                        BienBao bienBao = new BienBao(name, des, imagePath);
-                        bienBaoList.add(bienBao);
+                        Sign sign = new Sign(name, des, imagePath);
+                        signList.add(sign);
                     }
                 }
             }
@@ -85,5 +86,4 @@ public class BienBaoActivity extends AppCompatActivity {
             Toast.makeText(this, "Lỗi khi tải dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
 }
