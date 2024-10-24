@@ -593,7 +593,6 @@
     {
       "name": "Biển báo W.214: Cầu xoay – cầu cất",
       "des": "Báo cầu phía trước là loại cầu xoay, cầu cất là những loại cầu trong từng khoảng thời gian có ngắt giao thông đường bộ để cho tàu thuyền qua lại. Các phương tiện đi trên đường bộ phải chờ đợi để đi qua.",
-      "des": "Báo cầu phía trước là loại cầu tạm, được làm để sử dụng tạm thời cho xe qua lại.",
       "id": 35,
       "image":"https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.214.png"
     },
@@ -649,7 +648,7 @@
       "name": "Biển báo W.220: Dốc lên nguy hiểm",
       "des": "Báo trước sắp lên dốc nguy hiểm, người điều khiển phương tiện phải chọn cách chạy phù hợp để đảm bảo an toàn.",
       "id": 44,
-      "image":"https://trungtamthanhcong.net/wp-content/uploads/2015/07/w.220.jpg"
+      "image":"https://trungtamthanhcong.net/wp-content/uploads/2015/07/219.gif"
     },
     {
       "name": "Biển báo W.221a: Đường không bằng phẳng",

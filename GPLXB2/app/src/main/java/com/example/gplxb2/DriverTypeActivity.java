@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,7 @@ public class DriverTypeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DriverTypeAdapter adapter;
     private List<DriverType> driverTypeList;
-    private Button backButton; // Nút Back
+    private ImageButton backButton; // Nút Back
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

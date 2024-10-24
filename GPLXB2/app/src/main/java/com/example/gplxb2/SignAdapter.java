@@ -113,6 +113,7 @@ public class SignAdapter extends RecyclerView.Adapter<SignAdapter.SignViewHolder
         });
     }
 
+
     @Override
     public int getItemCount() {
         return signList.size();

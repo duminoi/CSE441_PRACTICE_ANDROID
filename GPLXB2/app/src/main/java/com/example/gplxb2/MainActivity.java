@@ -89,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //btn btnremind
+        ImageButton btnRemind = findViewById(R.id.btnremind);
+        btnRemind.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, TipsActivity.class);
+            startActivity(intent);
+        });
     }
 }

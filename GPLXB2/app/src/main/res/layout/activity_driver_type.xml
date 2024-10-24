@@ -20,17 +20,27 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- Nút Back -->
-        <Button
+<!--        <Button-->
+<!--            android:id="@+id/back_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:backgroundTint="#329BF1"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:text="Quay lại"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="16sp" />-->
+        <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:src="@drawable/back"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Quay lại"
             android:layout_marginStart="16dp"
-            android:backgroundTint="#329BF1"
-            android:gravity="center_vertical"
-            android:text="Quay lại"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:padding="8dp"/>
 
         <!-- Tiêu đề -->
         <TextView
