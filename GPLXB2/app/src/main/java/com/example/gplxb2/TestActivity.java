@@ -40,6 +40,7 @@ public class TestActivity extends AppCompatActivity {
     private ArrayList<Integer> incorrectAnswers;
     private DatabaseHelper databaseHelper;
     private String title = ""; // Biến để lưu tiêu đề
+    private TextView correctAnswerTextView; // TextView để hiển thị đáp án đúng
 
     // Exam index
     private int examIndex = -1; // Mặc định -1 để random
@@ -82,34 +83,75 @@ public class TestActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        // Khởi tạo các thành phần giao diện và dữ liệu
         databaseHelper = new DatabaseHelper(this);
         incorrectAnswers = databaseHelper.getIncorrectAnswers();
-        // Initialize views
         timerTextView = findViewById(R.id.timer);
         questionCounterTextView = findViewById(R.id.question_counter);
         submitButton = findViewById(R.id.submit_btn);
         nextButton = findViewById(R.id.next_btn);
         backButton = findViewById(R.id.back_btn);
         questionRecyclerView = findViewById(R.id.question_list);
-
-        // Setup RecyclerView with horizontal scrolling
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         questionRecyclerView.setLayoutManager(layoutManager);
 
-        // Get the examIndex from intent
+        // Nhận dữ liệu từ Intent
         examIndex = getIntent().getIntExtra("examsIndex", -1);
-        Log.d("TestActivity", "examsIndex: " + examIndex);
+        int questionIndex = getIntent().getIntExtra("questionIndex", 0); // Nhận questionIndex từ Intent
 
+        // Tải câu hỏi theo loại đề thi
+        loadQuestionsBasedOnIndex(examIndex);
+
+        criticals = loadCriticalQuestionsFromJson();
+        totalQuestions = questions.size();
+
+        // Thiết lập adapter cho RecyclerView
+        adapter = new QuestionAdapter(questions, criticals);
+        questionRecyclerView.setAdapter(adapter);
+
+        // Điều hướng đến câu hỏi được chọn
+        if (questionIndex >= 0 && questionIndex < totalQuestions) {
+            currentPosition = questionIndex;
+            questionRecyclerView.scrollToPosition(currentPosition); // Cuộn đến vị trí câu hỏi
+            updateQuestionCounter(); // Cập nhật số thứ tự câu hỏi
+        }
+
+        // Bắt đầu bộ đếm thời gian
+        startTimer();
+
+        // Sự kiện nút Next
+        nextButton.setOnClickListener(v -> {
+            if (currentPosition < totalQuestions - 1) {
+                currentPosition++;
+                questionRecyclerView.smoothScrollToPosition(currentPosition);
+                updateQuestionCounter();
+            }
+        });
+
+        // Sự kiện nút Back
+        backButton.setOnClickListener(v -> {
+            if (currentPosition > 0) {
+                currentPosition--;
+                questionRecyclerView.smoothScrollToPosition(currentPosition);
+                updateQuestionCounter();
+            }
+        });
+
+        // Sự kiện nút Submit
+        submitButton.setOnClickListener(v -> submitAnswers(title));
+    }
+
+    // Hàm tải câu hỏi dựa trên examIndex
+    private void loadQuestionsBasedOnIndex(int examIndex) {
         if (examIndex > 1000) {
             if (examIndex == 2001) {
                 questions = loadCriticalQuestions();
-                title = "Các câu Điểm liệt"; // Gán tiêu đề cho câu hỏi quan trọng
+                title = "Các câu Điểm liệt";
             } else {
                 questions = loadQuestionsByExamIndex(examIndex);
                 switch (examIndex) {
@@ -135,61 +177,27 @@ public class TestActivity extends AppCompatActivity {
                         title = "Sa hình";
                         break;
                     default:
-                        title = "Đề thi " + examIndex; // Đặt tiêu đề mặc định
+                        title = "Đề thi " + examIndex;
                         break;
                 }
             }
         } else if (examIndex == 60) {
-            questions = loadCriticalQuestions(); // Load only critical questions
-            title = "Các câu Điểm liệt"; // Tiêu đề cho câu hỏi quan trọng
+            questions = loadCriticalQuestions();
+            title = "Các câu Điểm liệt";
         } else if (examIndex == 40) {
-            questions = loadIncorrectQuestions(); // Load only top 50 questions
-            title = "Các câu bị sai"; // Tiêu đề cho câu bị sai
+            questions = loadIncorrectQuestions();
+            title = "Các câu bị sai";
         } else if (examIndex == 50) {
-            questions = loadTop50(); // Load only top 50 questions
-            title = "Top các câu hay sai"; // Tiêu đề cho top câu hỏi
+            questions = loadTop50();
+            title = "Top các câu hay sai";
         } else if (examIndex != -1) {
-            questions = loadQuestionsFromArray(arrays[examIndex]); // Load specific set of questions
+            questions = loadQuestionsFromArray(arrays[examIndex]);
             int realExamIndex = examIndex + 1;
-            title = "Đề thi " + realExamIndex ; // Tiêu đề cho đề thi cụ thể
+            title = "Đề thi " + realExamIndex;
         } else {
-            questions = loadQuestionsFromJson(); // Load random questions
-            title = "Đề ngẫu nhiên"; // Tiêu đề cho đề ngẫu nhiên
+            questions = loadQuestionsFromJson();
+            title = "Đề ngẫu nhiên";
         }
-
-        criticals = loadCriticalQuestionsFromJson();
-        totalQuestions = questions.size();
-
-        // Setup adapter and pass the callback for answer selection
-        adapter = new QuestionAdapter(questions, criticals); // Pass criticals to adapter
-        questionRecyclerView.setAdapter(adapter);
-
-        // Update question counter
-        updateQuestionCounter();
-
-        // Start timer
-        startTimer();
-
-        // Set Next button click listener
-        nextButton.setOnClickListener(v -> {
-            if (currentPosition < totalQuestions - 1) {
-                currentPosition++;
-                questionRecyclerView.smoothScrollToPosition(currentPosition);
-                updateQuestionCounter();
-            }
-        });
-
-        // Set Back button click listener
-        backButton.setOnClickListener(v -> {
-            if (currentPosition > 0) {
-                currentPosition--;
-                questionRecyclerView.smoothScrollToPosition(currentPosition);
-                updateQuestionCounter();
-            }
-        });
-
-        // Set Submit button click listener
-        submitButton.setOnClickListener(v -> submitAnswers(title)); // Gửi tiêu đề khi nộp bài
     }
 
     // Update question counter
@@ -227,10 +235,16 @@ public class TestActivity extends AppCompatActivity {
     }
 
     // Gửi các câu trả lời và tính điểm
+
     private void submitAnswers(String title) {
         int score = 0; // Khởi tạo điểm số
         int incorrectCriticalCount = 0; // Số lượng câu trả lời sai cho các câu hỏi quan trọng
         Map<String, String> selectedAnswers = adapter.getSelectedAnswers(); // Lấy các câu trả lời đã chọn từ adapter
+
+        Question currentQuestion = questions.get(currentPosition);
+
+        // Tạo danh sách để lưu trữ kết quả câu hỏi
+        List<QuestionResult> questionResults = new ArrayList<>();
 
         // Lấy danh sách các câu hỏi từ cơ sở dữ liệu
         ArrayList<Integer> incorrectAnswersFromDB = databaseHelper.getIncorrectAnswers();
@@ -238,6 +252,7 @@ public class TestActivity extends AppCompatActivity {
         // So sánh câu trả lời của người dùng với các câu trả lời đúng
         for (Question question : questions) {
             String userAnswer = selectedAnswers.get(question.getId()); // Lấy câu trả lời của người dùng
+            boolean isCorrect = false; // Biến để theo dõi câu trả lời đúng hay sai
 
             // Kiểm tra nếu câu hỏi là câu hỏi quan trọng
             if (criticals.contains(question.getId())) {
@@ -258,16 +273,19 @@ public class TestActivity extends AppCompatActivity {
                     databaseHelper.insertIncorrectAnswer(questionId); // Thêm vào cơ sở dữ liệu
                 }
             } else {
-                // Nếu câu trả lời đúng, kiểm tra và xóa ID nếu có trong danh sách
-                Integer questionId = Integer.parseInt(question.getId());
-
-                if (incorrectAnswers.contains(questionId)) {
-                    incorrectAnswers.remove(questionId); // Xóa ID câu hỏi đúng khỏi danh sách nếu có
-                    databaseHelper.deleteCorrectAnswer(questionId); // Xóa khỏi cơ sở dữ liệu
-                }
-                // Tăng điểm cho câu trả lời đúng
+                // Nếu câu trả lời đúng
                 score++; // Tăng điểm cho câu trả lời đúng
+                isCorrect = true; // Đánh dấu câu trả lời là đúng
+
+                // Xóa ID nếu có trong danh sách câu trả lời sai
+                Integer questionId = Integer.parseInt(question.getId());
+                incorrectAnswers.remove(questionId); // Xóa ID câu hỏi đúng khỏi danh sách nếu có
+                databaseHelper.deleteCorrectAnswer(questionId); // Xóa khỏi cơ sở dữ liệu
             }
+
+            // Thêm kết quả của câu hỏi vào danh sách questionResults
+            String questionText = question.getQuestionText(); // Sử dụng phương thức getQuestionText
+            questionResults.add(new QuestionResult(questionText, isCorrect));
         }
 
         // Sắp xếp danh sách các câu trả lời sai theo thứ tự tăng dần
@@ -282,9 +300,11 @@ public class TestActivity extends AppCompatActivity {
         intent.putExtra("SCORE", score); // Truyền điểm số đến ResultActivity
         intent.putExtra("TOTAL_QUESTIONS", questions.size()); // Truyền tổng số câu hỏi
         intent.putExtra("INCORRECT_CRITICAL_COUNT", incorrectCriticalCount); // Truyền số lượng câu hỏi quan trọng sai
+        intent.putExtra("QUESTION_RESULTS", (ArrayList<QuestionResult>) questionResults); // Truyền danh sách kết quả câu hỏi
         startActivity(intent); // Chuyển đến ResultActivity
         finish(); // Tùy chọn để kết thúc activity này
     }
+
 
 
     private List<Question> loadQuestionsByExamIndex(int examIndex) {
